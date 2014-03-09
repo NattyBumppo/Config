@@ -1,0 +1,24 @@
+#!/bin/bash
+
+curl http://www.nasa.gov/rss/dyn/breaking_news.rss > nasa.xml 2>/dev/null 
+
+function readpage {
+    read STRING;
+    # Now print line if it matches the required format
+    eval COUNT=$(echo $STRING | grep -c "<item> <title>")
+
+
+    if [ $COUNT -eq 1 ] 
+    then
+        HEADLINE=$(echo $STRING | awk '{gsub(/&#039;/,"'\''");print}' | awk -F">" '{print $3}' | awk -F"<" '{print $1}');
+        echo '-'$HEADLINE;
+    fi
+}
+
+while readpage; do
+    if [ -z "$STRING" ]
+    then
+        rm nasa.xml
+        exit
+    fi
+done < nasa.xml
