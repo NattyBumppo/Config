@@ -17,6 +17,7 @@ echo
 echo 'Joystiq News:'
 echo '================='
 ./joystiq_news | head
+echo
 
 # History Length
 HISTSIZE=150000
