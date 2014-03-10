@@ -21,10 +21,6 @@ function readpage {
 
 until $DONE ; do
     readpage;
-    if [ -z "$STRING" ]
-    then
-        echo "ran out of lines"
-        rm joystiq.xml
-        exit
-    fi
 done < joystiq.xml
+
+rm joystiq.xml
