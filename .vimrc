@@ -14,6 +14,9 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Enable mouse
+set mouse=a
+
 " Ignore case when searching
 set ignorecase
 

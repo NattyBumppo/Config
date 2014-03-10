@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl http://www.nasa.gov/rss/dyn/breaking_news.rss > nasa.xml 2>/dev/null 
+curl --compressed http://www.nasa.gov/rss/dyn/breaking_news.rss > nasa.xml 2>/dev/null 
 
 function readpage {
     read STRING;
