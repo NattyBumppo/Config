@@ -9,12 +9,14 @@ fi
 echo 'Hi Nat!!'
 WORD=$(shuf english.txt | head -n 1)
 echo 'The word of the day today is' $WORD'!'
+echo
 echo 'NASA News:'
 echo '================='
-nasa_news
+./nasa_news
+echo
 echo 'Joystiq News:'
 echo '================='
-joystiq_news | head
+./joystiq_news | head
 
 # History Length
 HISTSIZE=150000
