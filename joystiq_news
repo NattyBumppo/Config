@@ -2,11 +2,15 @@
 
 curl http://www.joystiq.com/rss.xml > joystiq.xml 2>/dev/null 
 
+DONE=false;
+
 function readpage {
-    read STRING;
+    read STRING || DONE=true;
+    [[ ! $STRING ]] && continue;
+    # echo "Another string read:";
+    # echo $STRING;
     # Now print line if it matches the required format
     eval COUNT=$(echo $STRING | grep -c "<title><\!\[CDATA\[")
-
 
     if [ $COUNT -eq 1 ] 
     then
@@ -15,9 +19,11 @@ function readpage {
     fi
 }
 
-while readpage; do
+until $DONE ; do
+    readpage;
     if [ -z "$STRING" ]
     then
+        echo "ran out of lines"
         rm joystiq.xml
         exit
     fi
