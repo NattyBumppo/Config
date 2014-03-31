@@ -30,7 +30,7 @@ HISTCONTROL=ignoredups:ignorespace
 alias mkex='chmod 777'
 
 # Common directories
-alias 461web='cd /cse/web/courses/cse461/14wi/'
+alias 461web='cd /cse/web/courses/cse461/14sp/'
 alias 461ta='cd ~/461/'
 alias cfg='cd ~/config/'
 
