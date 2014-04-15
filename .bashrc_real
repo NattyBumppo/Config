@@ -28,6 +28,7 @@ HISTCONTROL=ignoredups:ignorespace
 
 # Command aliases
 alias mkex='chmod 777'
+alias subl='open -a Sublime\ Text\ 2"
 
 # Common directories
 alias 461web='cd /cse/web/courses/cse461/14sp/'
